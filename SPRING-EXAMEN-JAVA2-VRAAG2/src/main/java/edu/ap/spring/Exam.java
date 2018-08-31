@@ -36,8 +36,9 @@ public class Exam {
 	// 1 punt
 	//!!!!!fout in springtest, geeft 2 punten, zou 1 moeten zijn :) !!!!
 	public int countChar(List<String> names, String f) {
-		return names.stream()
-				.collect(Collectors.groupingBy(s -> f, Collectors.counting()));
+		return (int) names.stream()
+				.filter(p -> p.equals(f))
+				.count();
 
 	}
 	
